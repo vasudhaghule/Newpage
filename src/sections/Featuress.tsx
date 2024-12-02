@@ -1,3 +1,4 @@
+
 import React from "react";
 import Feat from "@/assets/RectangleFet.png";
 import Feat1 from "@/assets/Feat.png";
@@ -6,7 +7,7 @@ import Featcirc from "@/assets/Featc.png";
 import Star from "@/assets/Feats.png";
 import FeatD from "@/assets/Featd.png";
 
-const Features = () => {
+const Featuress = () => {
   return (
     <section className="mt-20 relative">
       {/* Wrapper to control layout */}
@@ -21,7 +22,6 @@ const Features = () => {
 
             <div className="flex items-center mt-14">
               <div className="relative h-[20px] w-[20px] rounded-full overflow-hidden flex-shrink-0 absolute top-[-16px]">
-              
                 <img
                   src={Featcirc.src}
                   alt="Circular Background"
@@ -52,7 +52,6 @@ const Features = () => {
 
             <div className="flex items-center mt-14">
               <div className="relative h-[20px] w-[20px] rounded-full overflow-hidden flex-shrink-0 absolute top-[-16px]">
-              
                 <img
                   src={Featcirc.src}
                   alt="Circular Background"
@@ -68,22 +67,20 @@ const Features = () => {
                 </div>
               </div>
 
-              {/* Secure Payments Text */}
+              {/* Trusted ratings and reviews Text */}
               <div className="ml-4 flex flex-col justify-center">
                 <p className="h-[30px] w-[280px] text-lg md:text-xl text-black font-medium">
-                Trusted ratings and reviews
+                  Trusted ratings and reviews
                 </p>
                 {/* Additional Text */}
                 <p className=" h-[25px] w-[380px] text-sm md:text-base text-black mt-1">
-                Pick the right person for the task based on real ratings and reviews from other users
+                  Pick the right person for the task based on real ratings and reviews from other users
                 </p>
               </div>
             </div>
 
-            
             <div className="flex items-center mt-14">
               <div className="relative h-[20px] w-[20px] rounded-full overflow-hidden flex-shrink-0 absolute top-[-16px]">
-              
                 <img
                   src={Featcirc.src}
                   alt="Circular Background"
@@ -99,14 +96,14 @@ const Features = () => {
                 </div>
               </div>
 
-              {/* Secure Payments Text */}
+              {/* Insurance for peace of mind Text */}
               <div className="ml-4 flex flex-col justify-center">
                 <p className="h-[30px] w-[280px] text-lg md:text-xl text-black font-medium">
-                Insurance for peace of mind
+                  Insurance for peace of mind
                 </p>
                 {/* Additional Text */}
                 <p className=" h-[25px] w-[430px] text-sm md:text-base text-black mt-1">
-                We provide liability insurance for Taskers performing most task activities
+                  We provide liability insurance for Taskers performing most task activities
                 </p>
               </div>
             </div>
@@ -140,27 +137,33 @@ const Features = () => {
           </div>
         </div>
       </div>
-      
+
       <div
         className="relative mx-auto mb-10 mt-32 relative"
         style={{
           width: "1300px",
           height: "699px",
-         
           gap: "0px",
           opacity: "1", // Set opacity to 1 if the component should be visible
         }}
       >
         {/* Content Container */}
         <div className="relative w-full h-full flex items-center justify-center border border-black/15 rounded-xl bg-white">
-          {/* YouTube Video Placeholder */}
-          <h2 className="text-2xl md:text-4xl font-semibold text-gray-800">
-            YouTube video will play here
-          </h2>
+          {/* YouTube Video Embed */}
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/bCJ3A-PZf5k
+"
+            title="YouTube video"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded-xl"
+          ></iframe>
         </div>
       </div>
     </section>
   );
 };
 
-export default Features;
+export default Featuress;
