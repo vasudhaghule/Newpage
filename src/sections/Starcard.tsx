@@ -1,92 +1,122 @@
-import React from "react";
-import Image from "next/image";
-import pop from "@/assets/Popular.png";
-import Rect from "@/assets/Rectangle.png";
-import Gstar from "@/assets/Gstar.png";
-import Rectt from "@/assets/Rectt.png";
-import Recttt from "@/assets/Recttt.png";
-import Pathh from "@/assets/Path.png";
+"use client";
 
-const Starcard = () => {
-  const contentData = [
-    { title: "REMOVALS", description: "" },
-    { title: "CLEANING", description: "" },
-    { title: "DELIVERY", description: "" },
-    { title: "ASSEMBLY", description: "" },
-    { title: "PAINTING", description: "" },
-    { title: "TUTORING", description: "" },
-  ];
+import LogoIcon from "@/assets/logo.svg";
+import React, { useState } from "react";
+import MenuIcon from "@/assets/icon-menu.svg";
+import { Button } from "@/components/Button";
+import Rect from "@/assets/Rectangle.png";
+import CircleP from "@/assets/Recp.png";
+
+export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section className="mt-20 px-8">
-      <h2 className="text-4xl md:text-7xl font-bold leading-tight text-black">
-        What others are getting done
-      </h2>
-
-    
-      <div className="mt-14 flex flex-wrap gap-3">
-        <button className="px-5 py-2 flex items-center font-medium text-black rounded-full border-2 border-black relative">
-          <Image
-            src={pop}
-            alt="Popular Icon"
-            width={20}
-            height={20}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2"
-          />
-          <span className="ml-8">Popular</span>
-        </button>
-
-        {["UX/UI Design", "Ecommerce Dev", "Video Animation", "Web Dev", "AI/ML"].map(
-          (category) => (
-            <button key={category} className="px-3 py-2 bg-white font-medium rounded-full text-black/70 border-2 border-black/70" >
-              {category}
-            </button>
-          )
-        )}
-      </div>
-
-      <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {contentData.map((item, index) => (
-          <div
-            key={index}
-            className="relative flex flex-col gap-4 p-6 rounded-xl border border-black/15 bg-white min-h-[200px]"
+    <header className="h-auto z-20 sticky inset-0 backdrop-blur-md py-3 bg-white bg-opacity-90">
+      <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        {/* Mobile View: Menu Icon and Logo */}
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
           >
-            <div className="flex items-center gap-4">
-              <div className="relative h-[56px] w-[56px] rounded-full overflow-hidden flex-shrink-0 absolute top-[-16px]">
-                <img src={Rect.src} alt="Circular Background" className="h-full w-full object-cover"
+            <MenuIcon className="h-[18.33px] w-[22.76px]" alt="Menu Icon" />
+          </button>
+          <a href="#" className="flex items-center" aria-label="Home">
+            <LogoIcon className="h-6 w-auto" alt="Logo" />
+          </a>
+        </div>
+
+        {/* Desktop View: Navigation and Logo */}
+        <div className="hidden md:flex items-center gap-8">
+          <a href="#" className="flex items-center" aria-label="Home">
+            <LogoIcon className="h-8 w-auto" alt="Logo" />
+          </a>
+          <nav className="flex gap-10 text-sm">
+            <a href="#" className="text-black-900 font-medium">
+              Categories
+            </a>
+            <a href="#" className="text-black-900 font-medium">
+              Browse Tasks
+            </a>
+            <a href="#" className="text-black-900 font-medium">
+              How it Works
+            </a>
+          </nav>
+          <Button bgColor="#000000" textColor="#FFFFFF">
+            Post a Task
+          </Button>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center gap-4 md:gap-10">
+          {/* Mobile View: Sign Up and Image */}
+          <div className="flex md:hidden items-center gap-4">
+            <a
+              href="#"
+              className="text-gray-700 hover:text-black transition font-medium"
+            >
+              Sign Up
+            </a>
+            <div className="relative h-[50px] w-[50px] rounded-full overflow-hidden">
+              {/* Circular Background */}
+              <img
+                src={Rect.src}
+                alt="Circular Background"
+                className="h-full w-full object-contain"
+              />
+              {/* Centered Icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src={CircleP.src}
+                  alt="Centered Icon"
+                  className="h-[18.33px] w-[18.33px] object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <img src={Rectt.src} alt="Star" className="h-[14px] w-[18px] object-contain"/>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <img src={Recttt.src}  alt="Star" className="h-[10px] w-[18px] object-contain" />
-                </div>
-              </div>
-             
-              <div>
-                <p className="text-sm md:text-base font-medium text-black">REMOVALS </p>
-                <p className="mt-1 text-lg md:text-xl font-semibold text-black">Couch moved 1km down the road </p>
               </div>
             </div>
-
-            <div className="flex items-center gap-1 mt-auto pt-4">
-              <Image src={Gstar} alt="Gstar Icon" width={16} height={16} className="object-contain"/>
-              <p className="text-sm font-medium text-black">5 Stars</p>
-            </div>
-
-            <div className="absolute bottom-4 right-4 text-lg  text-black">$500 </div>
           </div>
-        ))}
+
+          {/* Desktop View: Sign Up, Log In, Become a Tasker */}
+          <div className="hidden md:flex items-center gap-10">
+            <a
+              href="#"
+              className="text-gray-700 hover:text-black transition font-medium"
+            >
+              Sign Up
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 hover:text-black transition font-medium"
+            >
+              Log In
+            </a>
+            <Button
+              bgColor="#FFFFFF"
+              textColor="#000000"
+              onClick={() => alert("Become a Tasker")}
+            >
+              Become a Tasker
+            </Button>
+          </div>
+        </div>
       </div>
 
-      <div className="mt-8 ml-8 flex justify-center">
-          <button className="px-6 py-3 flex  items-center justify-between  bg-black font-medium rounded-full gap-6 border border-black">
-            <span className="text-left text-white">Post your task</span>
-            <Image src={Pathh} alt="Arrow Icon" width={20} height={20} className="ml-4"/>
-          </button>
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg">
+          <nav className="flex flex-col gap-4 p-4">
+            <a href="#" className="text-gray-800 hover:text-black font-medium">
+              Categories
+            </a>
+            <a href="#" className="text-gray-800 hover:text-black font-medium">
+              Browse Tasks
+            </a>
+            <a href="#" className="text-gray-800 hover:text-black font-medium">
+              How it Works
+            </a>
+          </nav>
         </div>
-    </section>
+      )}
+    </header>
   );
 };
-
-export default Starcard;
