@@ -4,8 +4,8 @@ import LogoIcon from "@/assets/logo.svg";
 import React from "react";
 import MenuIcon from "@/assets/icon-menu.svg";
 import { Button } from "@/components/Button";
-import Rect from "@/assets/Rectangle.svg";
-import CircleP from "@/assets/circle-plus.svg";
+import Rect from "@/assets/Rectangle.png";
+import CircleP from "@/assets/Recp.png";
 
 export const Header = () => {
   return (
@@ -41,21 +41,36 @@ export const Header = () => {
             Post a Task
           </Button>
         </div>
+{/* Right Section */}
+<div className="flex items-center gap-4 md:gap-10">
+  {/* Mobile View: Sign Up and Image */}
+  <div className="flex md:hidden items-center gap-4">
+    <a
+      href="#"
+      className="text-gray-700 hover:text-black transition font-medium"
+    >
+      Sign Up
+    </a>
+    <div className="relative h-[50px] w-[50px] rounded-full overflow-hidden">
+  {/* Circular Background */}
+  <img
+    src={Rect.src}
+    alt="Circular Background"
+    className="h-full w-full object-contain"
+  />
+  {/* Centered Icon */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <img
+      src={CircleP.src}
+      alt="Centered Icon"
+      className="h-[18.33px] w-[18.33px] object-contain"
+    />
+  </div>
+</div>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-4 md:gap-10">
-          {/* Mobile View: Sign Up and Image */}
-          <div className="flex md:hidden items-center gap-4">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-black transition font-medium"
-            >
-              Sign Up
-            </a>
-            <div className="relative h-8 w-8">
-              <img src={CircleP} alt="Circle Plus Icon" />
-            </div>
-          </div>
+  </div>
+</div>
+
 
           {/* Desktop View: Sign Up, Log In, Become a Tasker */}
           <div className="hidden md:flex items-center gap-10">
@@ -80,7 +95,7 @@ export const Header = () => {
             </Button>
           </div>
         </div>
-      </div>
+      
     </header>
   );
 };
