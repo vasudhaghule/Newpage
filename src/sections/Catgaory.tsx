@@ -16,7 +16,6 @@ const Category = () => {
 
   return (
     <section className="mt-20 px-8">
-      {/* Title */}
       <h2 className="text-4xl md:text-3xl font-bold leading-tight text-black ml-12">
   Browse Talent by category
 </h2>
@@ -28,23 +27,21 @@ const Category = () => {
       <div
         className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 mx-auto"
         style={{
-          width: "1200px", // Adjust container width
+          width: "1200px", 
           height: "auto",
-          opacity: "1", // Set opacity to make it visible
+          opacity: "1", 
         }}
       >
-        {/* Generate Cards Dynamically */}
+  
         {categories.map((category, index) => (
           <div
             key={index}
             className="w-[276px] h-[124px] bg-[#FBFBF8] border border-[#FBFBF8] rounded-lg flex flex-col items-center justify-between p-4 relative"
           >
-            {/* Category Name */}
             <p className=" w-[188.27px] h-[20.47px] absolute bottom-20 left-4 text-black font-medium ml-1">
               {category.name}
             </p>
 
-            {/* Rating */}
             <div className="flex items-center gap-1 absolute bottom-10 left-4 ">
               <Image
                 src={StarGreen}
@@ -56,7 +53,6 @@ const Category = () => {
               <p className=" text-sm font-medium text-black">{category.rating}</p>
             </div>
 
-            {/* Skills */}
             <div className="absolute bottom-10 left-30 text-sm font-medium text-black">
               {category.skills}
             </div>
