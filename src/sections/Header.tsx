@@ -4,8 +4,9 @@ import LogoIcon from "@/assets/logo.svg";
 import React, { useState } from "react";
 import MenuIcon from "@/assets/icon-menu.svg";
 import { Button } from "@/components/Button";
-import Rect from "@/assets/Rectangle.png";
-import CircleP from "@/assets/Recp.png";
+import Rectt from "@/assets/Rectangle.png";
+import Plus from "@/assets/Plus.png";
+
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,14 +62,14 @@ export const Header = () => {
             <div className="relative h-[50px] w-[50px] rounded-full overflow-hidden">
               {/* Circular Background */}
               <img
-                src={Rect.src}
+                src={Rectt.src}
                 alt="Circular Background"
                 className="h-full w-full object-contain"
               />
               {/* Centered Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src={CircleP.src}
+                  src={Plus.src}
                   alt="Centered Icon"
                   className="h-[18.33px] w-[18.33px] object-contain"
                 />
