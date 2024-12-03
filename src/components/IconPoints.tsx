@@ -2,8 +2,8 @@
 import Image from "next/image";
 
 interface IconPointsProps {
-  text: string; // Text to display
-  imageSrc: string; // Source of the image
+  text: string;
+  imageSrc: string; 
 }
 
 const IconPoints: React.FC<IconPointsProps> = ({
@@ -34,7 +34,7 @@ const IconPoints: React.FC<IconPointsProps> = ({
 
       <span
         style={{
-          width: "auto", // Automatically adjusts to text content
+          width: "auto", 
           height: "28px",
           fontFamily: "Manrope",
           fontSize: "20px",
