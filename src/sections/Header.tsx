@@ -14,10 +14,10 @@ export const Header = () => {
         {/* Mobile View: Menu Icon and Logo */}
         <div className="flex items-center gap-4 md:hidden">
           <button aria-label="Open menu">
-            <MenuIcon className="h-6 w-6" alt="Menu Icon" />
+            <MenuIcon className="h-18.33 w-22.76" alt="Menu Icon" />
           </button>
           <a href="#" className="flex items-center" aria-label="Home">
-            <LogoIcon className="h-8 w-auto" alt="Logo" />
+            <LogoIcon className="h-6 w-auto md:h-8 lg:h-10" alt="Logo" />
           </a>
         </div>
 
